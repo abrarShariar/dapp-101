@@ -24,4 +24,5 @@ contract Election {
     candidatesCount++;
     candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
   }
+
 }
