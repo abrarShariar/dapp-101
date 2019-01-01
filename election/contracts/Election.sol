@@ -11,7 +11,7 @@ contract Election {
   // store candidates
   mapping (uint => Candidate) public candidates;
   // keep a counter to track the number of candidates
-  uint public candidatesCount;
+  uint public candidatesCount = 0;
 
   // constructor is called once the smart contract is deployed/migrated
   constructor () public {
@@ -21,8 +21,15 @@ contract Election {
 
   // function to add canditate
   function addCandidate (string memory _name) private {
-    candidatesCount++;
     candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
+    candidatesCount++;
   }
+
+  /* function listAllCandidates () private {
+
+    for (uint i = 0;i < candidatesCount;i++) {
+      LogUint();
+    }
+  } */
 
 }
